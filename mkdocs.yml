@@ -1,0 +1,84 @@
+site_name: ros2_recipe
+copyright: "&copy; 2024 Yuma Matsumura"
+repo_url: https://github.com/YumaMatsumura/ros2_recipe
+repo_name: YumaMatsumura/ros2_recipe
+nav:
+  - ros2_recipeとは: index.md
+  - レシピ:
+      - cpp:
+          - ParameterDescriptorについて: recipe/cpp/parameter_descriptor.md
+          - lifecycle_managerについて: recipe/cpp/lifecycle_manager.md
+          - BehaviorTreeについて: recipe/cpp/behavior_tree.md
+          - dynamic_parameterについて: recipe/cpp/dynamic_parameter.md
+          - QuaternionからYawに変換する方法: recipe/cpp/get_yaw.md
+      - rust:
+          - ros2rustについて: recipe/rust/ros2_rust.md
+      - launch:
+          - launchのclass自作: recipe/launch/launch_class.md
+          - 条件分岐でAndやOrを使う方法: recipe/launch/and_or.md
+          - subprocessを回す方法: recipe/launch/subprocess.md
+      - others:
+          - loggingについて: recipe/others/logging.md
+theme:
+  name: material
+  font:
+    text: Noto Sans JP
+    code: Inconsolata
+  icon:
+    logo: fontawesome/solid/robot # サイト左上のロゴ
+    repo: fontawesome/brands/github # repo_url, repo_nameで設定したアイコン
+  palette:
+    - scheme: default
+      primary: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - content.code.copy # コードコピーボタンの追加
+    - navigation.tabs # タブの追加
+    - navigation.tabs.sticky # 画面スクロールした場合もタブを有効化
+    - navigation.top # ドップに戻るボタンの追加
+plugins:
+  search:
+    lang: ja # 日本語検索の有効化
+extra:
+  social: # フッターにアイコン&リンクを追加
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/A69eZhrYLmCWncr
+    - icon: fontawesome/brands/github
+      link: https://github.com/YumaMatsumura/ros2_recipe
+  generator: false # フッターにMkDocsで生成されたことを非表示にする
+extra_css:
+  - https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css
+extra_javascript:
+  - docs/js/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+markdown_extensions:
+  - admonition # メモ、ヒント、警告などのブロックの有効化
+  - attr_list # ボタンの有効化
+  - footnotes # 注釈の有効化
+  - pymdownx.arithmatex: # 数式拡張機能の有効化
+      generic: true
+  - pymdownx.details # メモ、ヒント、警告などの折りたたみブロックの有効化
+  - pymdownx.highlight: # コードハイライトの有効化
+      use_pygments: true
+      pygments_style: monokai
+      linenums: true
+      anchor_linenums: true
+  - pymdownx.keys # キーコードの有効化
+  - pymdownx.smartsymbols # シンボル（コピーライトなど）の有効化
+  - pymdownx.superfences: # コードフェンスの有効化
+      custom_fences:
+        - name: mermaid  # コードフェンスにmermaid機能を追加
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed: # タブブロックの有効化
+      alternate_style: true
+  - pymdownx.tasklist: # タスクリストの有効化
+      custom_checkbox: true
+      clickable_checkbox: true
